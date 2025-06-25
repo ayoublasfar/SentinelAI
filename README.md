@@ -11,7 +11,12 @@ Vulnerabilities Scan: Offensive techniques applied on target website to detect v
 
 AI Prioritization: Scores vulnerabilities based on context (e.g., severity, exploitability, regulatory impact) and provides tailored remediation advice. Enables AI-driven prioritization and risk scoring. Based on vulnerability type, affected component, site context (e.g. login page, admin panel), and with the following models: Heuristic Scoring Tables, Compliance-aware Scorers (PCI DSS, HIPAA, SOX), Temporal decay for CVE age, an output with all details and scores is produced for each vulnerability on each link scanned.
 
-Threat Graph: Builds interactive graphs to show attack paths between vulnerabilities and identify potential exploitation routes. Integrates GNN models to predict high-risk chains.
+Threat Graph: Builds interactive graphs to show attack paths between vulnerabilities and identify potential exploitation routes. Integrates GNN models to predict high-risk chains. Graph construction is done based on vulnerability list, site structure and scan metadata. It relies on GCN (Graph Convolutional Network) and GAT (Graph Attention Network) also MITRE ATT&CK tags are included in the graph. Structure: nodes = vulnerabilities, edges = logical exploitation links with severity given to each link.
+
+Attack path prediction: Assess likelihood of full-chain attacks. GCN + RandomForest classifier feeds on threat graph data to predict risk for each path, estimating likelihood of compromise.
+
+Anomaly detection: Detects anomalies found in threat graph and unusual patters using node centrality, similarity scores, link density and scan metadata. Model used is IsolationForest to output anomaly score per node or path (use case: spotting zero-day behavior or misconfigurations).
+
 
 <img width="906" alt="image 1" src="https://github.com/user-attachments/assets/cb078c23-30ae-41fc-bb76-9a984f35621b" />
 
