@@ -15,7 +15,7 @@ Threat Graph: Builds interactive graphs to show attack paths between vulnerabili
 
 Attack path prediction: Assess likelihood of full-chain attacks. GCN + RandomForest classifier feeds on threat graph data to predict risk for each path, estimating likelihood of compromise.
 
-Anomaly detection: Detects anomalies found in threat graph and unusual patters using node centrality, similarity scores, link density and scan metadata. Model used is IsolationForest to output anomaly score per node or path (use case: spotting zero-day behavior or misconfigurations).
+Anomaly detection: Detects anomalies found in threat graph and unusual patters using node centrality, similarity scores, link density and scan metadata. Model used is IsolationForest to output anomaly score per node or path (use case: spotting zero-day behavior or misconfigurations).  
 
 
 <img width="906" alt="image 1" src="https://github.com/user-attachments/assets/cb078c23-30ae-41fc-bb76-9a984f35621b" />
