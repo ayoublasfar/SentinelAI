@@ -17,6 +17,8 @@ Attack path prediction: Assess likelihood of full-chain attacks. GCN + RandomFor
 
 Anomaly detection: Detects anomalies found in threat graph and unusual patters using node centrality, similarity scores, link density and scan metadata. Model used is IsolationForest to output anomaly score per node or path (use case: spotting zero-day behavior or misconfigurations).      
 
+Semantic Search Engine: Enables natural language queries on past scans like “find threats exposing admin access” and returns semantically matched vulnerabilities. It does retrieve relevant vulnerabilities matching the query intent and can be customized by parameters such as severity, exploitability, date first discovered and predicted impact. The engine is currently based on Sentence Transformers - Model: all-MiniLM-L6-v2 and FAISS for indexed vectors on the database to optimize performance.
+
 
 <img width="906" alt="image 1" src="https://github.com/user-attachments/assets/cb078c23-30ae-41fc-bb76-9a984f35621b" />
 
